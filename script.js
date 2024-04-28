@@ -18,7 +18,7 @@ boxes.forEach((e) => {
 function changeTurn() {
   if (turn === "X") {
     turn = "O";
-    DocumentTimeline.querySelector(".bg").style.left = "85px";
+    document.querySelector(".bg").style.left = "85px";
   } else {
     turn = "X";
     document.querySelector(".bg").style.left = "0";
@@ -39,11 +39,11 @@ function cheakWin() {
   for (let i = 0; i < winConditions.length; i++) {
     let v0 = boxes[winConditions[i][0]].innerHTML;
     let v1 = boxes[winConditions[i][1]].innerHTML;
-    let v2 = boxes[winConditions[i]][2].innerHTML;
+    let v2 = boxes[winConditions[i][2]].innerHTML;
 
     if (v0 != "" && v0 === v1 && v0 === v2) {
       isGameOver = true;
-      document.querySelector("#results").innerHTML = turn + "win";
+      document.querySelector("#results").innerHTML = turn + " win";
       document.querySelector("#play-again").style.display = "inline";
 
       for (j = 0; j < 3; j++) {
@@ -60,6 +60,7 @@ function cheakDraw() {
     boxes.forEach((e) => {
       if (e.innerHTML === "") isDraw = false;
     });
+
     if (isDraw) {
       isGameOver = true;
       document.querySelector("#results").innerHTML = "Draw";
