@@ -73,6 +73,7 @@ body {
   font-size: 1.2rem;
   border-radius: 10px;
   cursor: pointer;
+  display: none;
 }
 #play-again:hover {
   padding: 10px 40px;
